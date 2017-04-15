@@ -26,15 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		            .authoritiesByUsernameQuery("select uname,rname from tuserrole where uname=?")
 //		            .passwordEncoder(new StandardPasswordEncoder())  //使用转码后的密码
 		            ;
-//		auth
-//		    .inMemoryAuthentication()
-//		        .withUser("user").password("password").roles("USER").and()
-//		        .withUser("admin").password("password").roles("USER","ADMIN");
-		
-//		auth
-//            .ldapAuthentication()   //启用LDAP验证
-//                .userDnPatterns("uid={0},ou=people")
-//                .groupSearchBase("ou=groups");
 	}
 	
 	@Override
@@ -76,7 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		    .and()
 		    .sessionManagement()  ////启动session并发管理
 		        .maximumSessions(1)  //最大同时登录人数
-		        .maxSessionsPreventsLogin(true) //如果true，达到最大人数后再认证会被拒绝
+//		        .maxSessionsPreventsLogin(true) //如果true，达到最大人数后再认证会被拒绝
 		        .expiredUrl("/session") //如果认证已过期，当前用户尝试访问会跳转的界面
 		        ;
 	}
