@@ -8,23 +8,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h4>答疑系统</h4>
-	<p>
-	<a href="main">主界面</a>
-	</p>
-	<p>
-	<a href="back">后台界面</a>
-	</p>
-	<p>
-	<a href="VIP">VIP界面</a>
-	</p>
-	<p>
-	<a href="register">注册</a>
-	</p>
+	<h1 align="center">智能答疑系统</h1>
+	<table align="center" border="0">
+	<tr>
+	    <td align="center"><a href="main">主界面</a></td>
+	</tr>
+	<tr>
+	    <td align="center"><a href="back">后台界面</a></td>
+	</tr>
+	<tr>
+	    <td align="center"><a href="VIP">VIP界面</a></td>
+	</tr>
+	</table>
+	<div align="center">
 	<c:url var="logoutUrl" value="/logout"/>
     <form class="form-inline" action="${logoutUrl}" method="post">
-      <input type="submit" value="Log out" />
+      <input type="submit" value="注销" />
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
+	</div>
 </body>
 </html>

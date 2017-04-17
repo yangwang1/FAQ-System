@@ -7,9 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <ul>
-         <li>登录已过期，请重新登录</li>
-         <li><a href="login">登录</a></li>
-       </ul>
+
+    <table align="center" border="0">
+         <tr>
+         <td>登录已过期，请重新登录</td>
+         </tr>
+         <tr>
+         <td align="center"><a href="login">登录</a></td>
+         </tr>
+     </table>
 </body>
 </html>

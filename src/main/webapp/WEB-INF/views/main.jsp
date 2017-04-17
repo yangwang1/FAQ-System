@@ -8,11 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>欢迎来到主界面。</h1>
+    <h1 align="center">欢迎来到主界面。</h1>
+    <div align="center">
     <c:url var="logoutUrl" value="/logout"/>
     <form class="form-inline" action="${logoutUrl}" method="post">
       <input type="submit" value="Log out" />
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
+    </div>
 </body>
 </html>

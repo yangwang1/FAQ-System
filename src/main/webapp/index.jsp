@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1><a href="helloworld">欢迎</a></h1>
+	<h1 align="center"><a href="helloworld">欢迎来到智能答疑系统</a></h1>
 
 </body>
 </html>

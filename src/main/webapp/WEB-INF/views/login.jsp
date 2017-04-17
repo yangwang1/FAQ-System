@@ -21,22 +21,31 @@
                 You have been logged out.
             </p>
         </c:if>
-        <p>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username"/><!-- 登录名参数必须被命名为username  -->
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"/><!-- 密码参数必须被命名为password  -->  
-        </p>
-        <p>
-            <input id="remember_me" name="remember_me" type="checkbox"/>
-            <label for="remember_me" class="inline">Remember me</label>
-        </p>
-        <input type="hidden" 
-            name="${_csrf.parameterName}"
-            value="${_csrf.token}"/><!-- CSRF（跨站请求伪造）参数  -->
-        <button type="submit" class="btn">Log in</button>
+        <table align="center" border="0" width="250" height="100">
+            <tr>
+            <td><label for="username">用户名</label></td>
+            <td><input type="text" id="username" name="username"/></td><!-- 登录名参数必须被命名为username  -->
+            </tr>
+            <tr>
+            <td><label for="password">密码</label></td>
+            <td><input type="password" id="password" name="password"/></td><!-- 密码参数必须被命名为password  -->  
+            </tr>
+            <tr>
+            <td align="right"><input id="remember_me" name="remember_me" type="checkbox"/></td>
+            <td align="left"><label for="remember_me" class="inline">记住密码</label></td>
+            </tr>
+            <tr>
+            <td>
+              <input type="hidden" 
+                 name="${_csrf.parameterName}"
+                 value="${_csrf.token}"/><!-- CSRF（跨站请求伪造）参数  -->
+            </td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn">登录</button></td>
+                <td><button type="button" onclick="window.location.href='register'">注册</button>
+            </tr>
+        </table>
     </form>
 
 </body>
