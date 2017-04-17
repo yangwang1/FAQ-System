@@ -2,6 +2,7 @@ package com.example.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -12,11 +13,20 @@ import javax.persistence.Id;
 @Entity
 public class User {
 	
+	private int id;
 	private String username;  //用户名
 	private String password;  //密码
+	private int enabled;  //是否可用
 	
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -29,5 +39,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public int getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+	
 
 }

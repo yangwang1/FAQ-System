@@ -22,8 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		auth
 		    .jdbcAuthentication()
 		        .dataSource(dataSource)
-		            .usersByUsernameQuery("select uname,pwd,enabled from tuser where uname=?")
-		            .authoritiesByUsernameQuery("select uname,rname from tuserrole where uname=?")
+		            .usersByUsernameQuery("select username,password,enabled from user where username=?")
+		            .authoritiesByUsernameQuery("select username,rolename from user_role where username=?")
 //		            .passwordEncoder(new StandardPasswordEncoder())  //使用转码后的密码
 		            ;
 	}
@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			    .mvcMatchers("/back").hasRole("ADMIN")
 			    .antMatchers("/VIP").hasRole("VIP")
 			    .antMatchers("/helloworld").authenticated()
-//				.anyRequest().authenticated()
+				.anyRequest().authenticated()
 			    .anyRequest().permitAll()
 			.and()
 //			.requiresChannel()

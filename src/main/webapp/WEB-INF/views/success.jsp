@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h4>hello security</h4>
+	<h4>答疑系统</h4>
 	<p>
 	<a href="main">主界面</a>
 	</p>
@@ -17,6 +17,9 @@
 	</p>
 	<p>
 	<a href="VIP">VIP界面</a>
+	</p>
+	<p>
+	<a href="register">注册</a>
 	</p>
 	<c:url var="logoutUrl" value="/logout"/>
     <form class="form-inline" action="${logoutUrl}" method="post">
