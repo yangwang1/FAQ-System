@@ -11,10 +11,6 @@ public class BasicController {
 		return "main";
 	}
 	
-	@RequestMapping("/back")
-	public String back(){
-		return "back";
-	}
 	
 	@RequestMapping("/VIP")
 	public String vip(){

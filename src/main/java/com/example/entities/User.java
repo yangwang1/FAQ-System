@@ -1,9 +1,20 @@
 package com.example.entities;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * 用户实体类
@@ -13,20 +24,23 @@ import javax.persistence.Id;
 @Entity
 public class User {
 	
-	private int id;
+	private Integer id;
 	private String username;  //用户名
 	private String password;  //密码
+	private String mailbox; //邮箱
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date birth; //出生日期
 	private int enabled;  //是否可用
+	private List<UserRole> userrole; //用户权限
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	
 	public String getUsername() {
 		return username;
 	}
@@ -39,6 +53,19 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getMailbox() {
+		return mailbox;
+	}
+	public void setMailbox(String mailbox) {
+		this.mailbox = mailbox;
+	}
+	@Temporal(TemporalType.DATE)
+	public Date getBirth() {
+		return birth;
+	}
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
 	public int getEnabled() {
 		return enabled;
 	}
@@ -46,5 +73,14 @@ public class User {
 		this.enabled = enabled;
 	}
 	
-
+	@JoinColumn
+	@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, orphanRemoval = true)
+	public List<UserRole> getUserrole() {
+		return userrole;
+	}
+	public void setUserrole(List<UserRole> userrole) {
+		this.userrole = userrole;
+	}
+	
+	
 }

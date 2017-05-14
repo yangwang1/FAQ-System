@@ -10,16 +10,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @SpringBootTest
-public class TestRegisteredService {
+public class TestUserService {
 	
 	@Autowired
-	private RegisteredService registeredService;
+	private UserService userService;
 	
 	@Test
-	public void testRegisteredService(){
-		
-		registeredService.registered("yangwang", "123", null, null);
-		
+	public void testDelete(){
+		userService.delete(13);
 	}
 
 }

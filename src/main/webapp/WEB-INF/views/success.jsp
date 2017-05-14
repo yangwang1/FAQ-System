@@ -14,7 +14,7 @@
 	    <td align="center"><a href="main">主界面</a></td>
 	</tr>
 	<tr>
-	    <td align="center"><a href="back">后台界面</a></td>
+	    <td align="center"><a href="back">后台管理界面</a></td>
 	</tr>
 	<tr>
 	    <td align="center"><a href="VIP">VIP界面</a></td>

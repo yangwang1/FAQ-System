@@ -8,6 +8,8 @@ import com.example.entities.User;
  * @author wangwang
  *
  */
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, Integer> {
+	
+	User getByUsername(String username);
 
 }
