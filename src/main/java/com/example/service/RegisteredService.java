@@ -15,7 +15,7 @@ import com.example.repository.UserRoleRepository;
 
 
 /**
- * 注册
+ * 注册模块服务
  * @author wangwang
  *
  */
@@ -25,29 +25,38 @@ public class RegisteredService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	/**
+	 * 通过用户名查询,ajax验证用户名是否存在
+	 * @param username
+	 * @return
+	 */
 	@Transactional(readOnly=true)
 	public User getByUsername(String username){
 		return userRepository.getByUsername(username);
 	}
 	
+	/**
+	 * 注册
+	 * @param username
+	 * @param password
+	 * @param mailbox
+	 * @param birth
+	 */
 	@Transactional
-	public void registered(String username, String password, String mailbox, Date birth){
+	public void registered(String username, String password, String mailbox){
 		
 		System.out.println("RegisteredService");
-		List<UserRole> list = new ArrayList<>();
 		
 		UserRole userRole = new UserRole();
 		userRole.setUsername(username);
 		userRole.setRolename("ROLE_USER");
-		list.add(userRole);
 		
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setMailbox(mailbox);
-		user.setBirth(birth);
 		user.setEnabled(1);
-		user.setUserrole(list);
+		user.setUserrole(userRole);
 		userRepository.saveAndFlush(user);
 			
 	}

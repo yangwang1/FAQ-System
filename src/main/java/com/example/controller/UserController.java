@@ -25,17 +25,18 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-//	@ModelAttribute
-//	public void getUser(@RequestParam(value="id",required=false) Integer id,
-//			Map<String,Object> map){
-//		if(id!=null){
-//			User user = userService.get(id);
-//			map.put("user", user);
-//		}
-//	}
+	@ModelAttribute
+	public void getUser(@RequestParam(value="id",required=false) Integer id,
+			Map<String,Object> map){
+		if(id!=null){
+			User user = userService.get(id);
+			map.put("user", user);
+		}
+	}
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET)
 	public String delete(@PathVariable("id") Integer id){
+		System.out.println("delete!!!!!!!!");
 		userService.delete(id);
 		return "redirect:/back";
 	}
@@ -46,6 +47,7 @@ public class UserController {
 		map.put("user", user);
 		return "input";
 	}
+	
 	
 	@RequestMapping(value = "/save/{id}",method = RequestMethod.PUT)
 	public String update(User user){

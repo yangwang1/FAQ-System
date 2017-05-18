@@ -15,7 +15,7 @@ import com.example.entities.UserRole;
 import com.example.repository.UserRepository;
 
 /**
- * user的分页
+ * 后台管理服务
  * @author wangwang
  *
  */
@@ -25,29 +25,37 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	/**
+	 * 后台管理删除用户
+	 * @param id
+	 */
 	@Transactional
 	public void delete(Integer id){
 		userRepository.delete(id);
 	}
 	
+	/**
+	 * 根据ID查询
+	 * @param id
+	 * @return
+	 */
 	@Transactional(readOnly = true)
 	public User get(Integer id){
 		return userRepository.findOne(id);
 	}
 	
+	/**
+	 * 修改用户信息
+	 * @param user
+	 */
 	@Transactional
 	public void save(User user){
 		
-		System.out.println("RegisteredService");
-		List<UserRole> list = new ArrayList<>();
-		
-		UserRole userRole = new UserRole();
-		userRole.setUsername(user.getUsername());
-		userRole.setRolename("ROLE_USER");
-		list.add(userRole);
-		
-		user.setEnabled(1);
-		user.setUserrole(list);
+//		System.out.println("RegisteredService");
+//		
+//		User reUser = userRepository.findOne(user.getId());
+//		reUser.setPassword(user.getPassword());
+//		reUser.setMailbox(user.getMailbox());
 		userRepository.saveAndFlush(user);
 			
 	}

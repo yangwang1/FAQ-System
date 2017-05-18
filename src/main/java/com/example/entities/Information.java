@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -18,6 +17,7 @@ import javax.persistence.OneToMany;
 public class Information {
 	
 	private Integer id; //id
+	private String title; //标题
 	private String content; //信息内容
 	private List<Reply> reply; //回复内容
 	
@@ -28,6 +28,12 @@ public class Information {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent() {
 		return content;

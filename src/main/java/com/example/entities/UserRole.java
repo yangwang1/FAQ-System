@@ -17,7 +17,7 @@ public class UserRole {
 	private String username;  //用户名
 	private String rolename;  //权限名
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	@Id
 	public Integer getId() {
 		return id;

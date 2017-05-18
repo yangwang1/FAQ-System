@@ -50,7 +50,7 @@
       <caption align="top"></caption>
     <tr>
        <td>用&nbsp;户&nbsp;名:</td>
-       <td><form:input path="username" id="username"/></td>
+       <td><form:input path="username" id="username" disabled="true"/></td>
     </tr>
     <tr>
        <td>密&nbsp;&nbsp;&nbsp;码:</td>
@@ -59,6 +59,14 @@
     <tr>
        <td>邮&nbsp;&nbsp;&nbsp;箱:</td>
        <td><form:input path="mailbox"/></td>
+    </tr>
+    <tr>
+       <td align="center">是否可用:</td>
+       <td><form:input path="enabled"/></td>
+    </tr>
+    <tr>
+       <td>权&nbsp;&nbsp;&nbsp;限:</td>
+       <td><form:input path="userrole.rolename"/></td>
     </tr>
     <tr>
        <td><input type="hidden" 

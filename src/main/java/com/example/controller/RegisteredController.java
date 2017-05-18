@@ -24,7 +24,7 @@ public class RegisteredController {
 	private RegisteredService registeredService;
 	
 	@ResponseBody
-	@RequestMapping(value="/ajaxValidateLastName", method=RequestMethod.POST)
+	@RequestMapping(value="/ajaxValidateUsername", method=RequestMethod.POST)
 	public String validateUsername(@RequestParam(value="username",required=true) String username){
 		User user = registeredService.getByUsername(username);
 		if(user == null){
@@ -42,9 +42,9 @@ public class RegisteredController {
 	
 	@RequestMapping(value = "/registered",method = RequestMethod.POST)
 	public String registered(@RequestParam("username") String username,@RequestParam(value = "password", required = true) String password,
-			@RequestParam("con_password") String con_password, @RequestParam(value = "mailbox", required = false) String mailbox, @RequestParam(value = "birth", required = false) Date birth){
+			@RequestParam("con_password") String con_password, @RequestParam(value = "mailbox", required = false) String mailbox){
 		
-		registeredService.registered(username, password , mailbox, birth);
+		registeredService.registered(username, password , mailbox);
 		
 		return "registeredSuccess";
 	}

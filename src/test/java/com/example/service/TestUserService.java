@@ -17,7 +17,7 @@ public class TestUserService {
 	
 	@Test
 	public void testDelete(){
-		userService.delete(13);
+		userService.delete(4);
 	}
 
 }

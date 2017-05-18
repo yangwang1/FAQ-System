@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -28,12 +29,10 @@ public class User {
 	private String username;  //用户名
 	private String password;  //密码
 	private String mailbox; //邮箱
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date birth; //出生日期
 	private int enabled;  //是否可用
-	private List<UserRole> userrole; //用户权限
+	private UserRole userrole; //用户权限
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	@Id
 	public Integer getId() {
 		return id;
@@ -59,13 +58,6 @@ public class User {
 	public void setMailbox(String mailbox) {
 		this.mailbox = mailbox;
 	}
-	@Temporal(TemporalType.DATE)
-	public Date getBirth() {
-		return birth;
-	}
-	public void setBirth(Date birth) {
-		this.birth = birth;
-	}
 	public int getEnabled() {
 		return enabled;
 	}
@@ -74,13 +66,12 @@ public class User {
 	}
 	
 	@JoinColumn
-	@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, orphanRemoval = true)
-	public List<UserRole> getUserrole() {
+	@OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, orphanRemoval = true)
+	public UserRole getUserrole() {
 		return userrole;
 	}
-	public void setUserrole(List<UserRole> userrole) {
+	public void setUserrole(UserRole userrole) {
 		this.userrole = userrole;
 	}
-	
 	
 }

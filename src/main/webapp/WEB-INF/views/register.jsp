@@ -7,28 +7,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/scripts/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-     $(function(){
-         $("#username").change(function(){
-             var val = $(this).val();
-             val = $.trim(val);
-             $(this).val(val);
-
-             var url = "${pageContext.request.contextPath}/ajaxValidateLastName";
-             var args = {"username":val,"date":new Date()};
-
-             $.post(url,args,function(data){
-                 if(data == "0"){
-                     alert("用户名可用");
-                     }else if(data == "1"){
-                         alert("用户已存在");
-                         }else{
-                             alert("网络或程序出错");
-                             }
-                 });
-             });
-         })
+	$(function(){
+		$("#username").change(function(){
+			var val = $(this).val();
+			val = $.trim(val);
+			$(this).val(val);
+			
+			//若修改的 lastName 和之前的 lastName 一致, 则不发送 Ajax 请求, 直接 alert:lastName 可用!
+			var _oldLastName = $("#_oldusername").val();
+			_oldLastName = $.trim(_oldLastName);
+			if(_oldLastName != null && _oldLastName != "" && _oldLastName == val){
+				alert("username 可用!");
+				return;
+			}
+			
+			var url = "${pageContext.request.contextPath }/ajaxValidateUsername";
+			var args = {"lastName":val,"date":new Date()};
+			
+			$.post(url, args, function(data){
+				if(data == "0"){
+					alert("username 可用!");
+				}else if(data == "1"){
+					alert("username 不可用!");
+				}else{
+					alert("网络或程序出错. ");
+				}
+			});
+		});
+	})
 </script>
 </head>
 <body>

@@ -18,7 +18,7 @@ public class TestRegisteredService {
 	@Test
 	public void testRegisteredService(){
 		
-		registeredService.registered("yangwang", "123", null, null);
+		registeredService.registered("yangwang", "123", null);
 		
 	}
 
