@@ -45,8 +45,6 @@ public class RegisteredService {
 	@Transactional
 	public void registered(String username, String password, String mailbox){
 		
-		System.out.println("RegisteredService");
-		
 		UserRole userRole = new UserRole();
 		userRole.setUsername(username);
 		userRole.setRolename("ROLE_USER");

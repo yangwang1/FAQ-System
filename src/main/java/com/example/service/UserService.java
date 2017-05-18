@@ -50,14 +50,7 @@ public class UserService {
 	 */
 	@Transactional
 	public void save(User user){
-		
-//		System.out.println("RegisteredService");
-//		
-//		User reUser = userRepository.findOne(user.getId());
-//		reUser.setPassword(user.getPassword());
-//		reUser.setMailbox(user.getMailbox());
-		userRepository.saveAndFlush(user);
-			
+		userRepository.saveAndFlush(user);	
 	}
 	
 	/**

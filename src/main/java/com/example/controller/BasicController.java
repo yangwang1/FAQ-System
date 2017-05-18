@@ -24,7 +24,6 @@ public class BasicController {
 	
 	@RequestMapping("/helloworld")
 	public String hello(){
-		System.out.println("hello world");
 		return "success";
 	}
 	
