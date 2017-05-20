@@ -11,7 +11,7 @@
 	<h1 align="center">智能答疑系统</h1>
 	<table align="center" border="0">
 	<tr>
-	    <td align="center"><a href="main">主界面</a></td>
+	    <td align="center"><a href="information/main">主界面</a></td>
 	</tr>
 	<tr>
 	    <td align="center"><a href="back">后台管理界面</a></td>

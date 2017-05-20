@@ -47,6 +47,11 @@ public class PersonalInformationController {
 		return "personalInformation";
 	}
 	
+	/**
+	 * 更新修改后的个人信息
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "update",method = RequestMethod.PUT)
 	public String update(User user){
 		personInformation.save(user);

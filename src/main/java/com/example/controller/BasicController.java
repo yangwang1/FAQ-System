@@ -5,13 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BasicController {
-	
-	@RequestMapping("/main")
-	public String main(){
-		return "main";
-	}
-	
-	
+		
 	@RequestMapping("/VIP")
 	public String vip(){
 		return "VIP";

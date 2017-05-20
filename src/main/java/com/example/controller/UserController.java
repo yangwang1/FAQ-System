@@ -48,7 +48,6 @@ public class UserController {
 		return "input";
 	}
 	
-	
 	@RequestMapping(value = "/save/{id}",method = RequestMethod.PUT)
 	public String update(User user){
 		userService.save(user);
@@ -89,5 +88,4 @@ public class UserController {
 		map.put("page", page);
 		return "back";
 	}
-
 }

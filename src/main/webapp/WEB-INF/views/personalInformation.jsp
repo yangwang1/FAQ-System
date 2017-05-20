@@ -36,5 +36,6 @@
     </tr>
     </table>
     </form:form>
+    <c:out value="${requestScope.user.userrole.rolename}"></c:out>
 </body>
 </html>
