@@ -48,5 +48,11 @@ public class Reply {
 	public void setReplyTime(Date replyTime) {
 		this.replyTime = replyTime;
 	}
+	
+	@Override
+	public String toString() {
+		return "Reply [id=" + id + ", content=" + content + ", replyName=" + replyName + ", replyTime=" + replyTime
+				+ "]";
+	}
 
 }

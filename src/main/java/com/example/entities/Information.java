@@ -49,5 +49,9 @@ public class Information {
 	public void setReply(List<Reply> reply) {
 		this.reply = reply;
 	}
+	@Override
+	public String toString() {
+		return "Information [id=" + id + ", title=" + title + ", content=" + content + ", reply=" + reply + "]";
+	}
 
 }

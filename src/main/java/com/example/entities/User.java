@@ -1,21 +1,12 @@
 package com.example.entities;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * 用户实体类
@@ -72,6 +63,11 @@ public class User {
 	}
 	public void setUserrole(UserRole userrole) {
 		this.userrole = userrole;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", mailbox=" + mailbox
+				+ ", enabled=" + enabled + ", userrole=" + userrole + "]";
 	}
 	
 }

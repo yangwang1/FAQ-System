@@ -2,7 +2,6 @@ package com.example.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -37,6 +36,8 @@ public class UserRole {
 	public void setRolename(String rolename) {
 		this.rolename = rolename;
 	}
-	
-
+	@Override
+	public String toString() {
+		return "UserRole [id=" + id + ", username=" + username + ", rolename=" + rolename + "]";
+	}
 }

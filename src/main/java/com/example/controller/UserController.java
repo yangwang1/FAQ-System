@@ -34,13 +34,23 @@ public class UserController {
 		}
 	}
 	
+	/**
+	 * 通过id删除对应的user
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET)
 	public String delete(@PathVariable("id") Integer id){
-		System.out.println("delete!!!!!!!!");
 		userService.delete(id);
 		return "redirect:/back";
 	}
 	
+	/**
+	 * 根据id获取user返还给前台进行回显
+	 * @param id
+	 * @param map
+	 * @return
+	 */
 	@RequestMapping(value="/update/{id}",method=RequestMethod.GET)
 	public String input(@PathVariable("id") Integer id, Map<String, Object> map){
 		User user = userService.get(id);
@@ -48,6 +58,11 @@ public class UserController {
 		return "input";
 	}
 	
+	/**
+	 * 修改的保存
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping(value = "/save/{id}",method = RequestMethod.PUT)
 	public String update(User user){
 		userService.save(user);

@@ -5,13 +5,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.entities.Information;
-import com.example.entities.User;
 import com.example.service.InformationBrowsingService;
 
 /**
@@ -25,6 +25,19 @@ public class InformationBrowsingController {
 	
 	@Autowired
 	private InformationBrowsingService informationBrowsingService;
+	
+	/**
+	 * 所有方法执行之前先执行，如果有ID从前台返回，判断为修改操作，从数据库中获取一个information出来
+	 * @param id
+	 * @param map
+	 */
+	@ModelAttribute
+	private void getInfor(@RequestParam(value = "id", required = false) Integer id, Map<String,Object> map){
+		if(id != null){
+		  Information information = informationBrowsingService.get(id);
+		  map.put("information", information);
+		}
+	}
 	
 	@RequestMapping(value = "/create")
 	public String createInformation(){
@@ -50,6 +63,40 @@ public class InformationBrowsingController {
 	@RequestMapping(value = "delete/{id}" ,method = RequestMethod.GET)
 	public String delete(@PathVariable("id") Integer id){
 		informationBrowsingService.delete(id);
+		return "redirect:/information/main";
+	}
+	
+	/**
+	 * 根据问题的id得到详细内容(问题，回答，评论)，然后返回给前台
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "watch/{id}" ,method = RequestMethod.GET)
+	public String getDetails(@PathVariable("id") Integer id ,Map<String,Object> map){
+		Information information = informationBrowsingService.get(id);
+		map.put("information" ,information);
+		return "details";
+	}
+	
+	/**
+	 * 根据问题的id获取information数据，返回给前台进行回显
+	 * @return
+	 */
+	@RequestMapping(value = "get/{id}", method = RequestMethod.GET)
+	public String getInformation(@PathVariable("id") Integer id, Map<String,Object> map){
+		Information information = informationBrowsingService.get(id);
+		map.put("information" ,information);
+		return "updateInformation";
+	}
+	
+	/**
+	 * 修改后保存数据
+	 * @param information
+	 * @return
+	 */
+	@RequestMapping(value = "save/{id}", method = RequestMethod.PUT)
+	public String update(Information information){
+		informationBrowsingService.save(information);
 		return "redirect:/information/main";
 	}
 	

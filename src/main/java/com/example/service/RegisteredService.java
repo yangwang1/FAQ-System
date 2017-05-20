@@ -1,9 +1,5 @@
 package com.example.service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.entities.User;
 import com.example.entities.UserRole;
 import com.example.repository.UserRepository;
-import com.example.repository.UserRoleRepository;
 
 
 /**

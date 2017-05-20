@@ -39,6 +39,16 @@ public class InformationBrowsingService {
 	}
 	
 	/**
+	 * 根据id获取问题
+	 * @param id
+	 * @return
+	 */
+	@Transactional(readOnly = true)
+	public Information get(Integer id){
+		return informationRepository.findOne(id);
+	}
+	
+	/**
 	 * 分页
 	 * @param pageNo
 	 * @param pageSize
