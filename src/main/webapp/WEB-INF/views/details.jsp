@@ -24,6 +24,12 @@
 </script>
 </head>
 <body>
+
+      <form action="" method="POST" id="_form">
+        <input type="hidden" id="_method" name="_method"/>
+        <input type="hidden" name = "id" value="${information.id}"/>
+    </form>
+    
       <table border="0" cellpadding="4" cellspacing="0" align="center">
 			<tr>
 			  <th>id</th>
@@ -60,9 +66,12 @@
 		<c:forEach items="${information.reply }" var="reply">
 		回复人：&nbsp;${reply.replyName }
 		回复时间：&nbsp;${reply.replyTime }
+		<c:if test="${pageContext.request.remoteUser == reply.replyName or pageContext.request.remoteUser == 'admin' }">
+          <a href="${pageContext.request.contextPath}/reply/delete/${reply.id}" class="delete">删除</a>
+        </c:if>
 		<br>
 		回复内容：&nbsp;${reply.content }
-		<br>
+        <br>
 		</c:forEach>
 		</div>
 

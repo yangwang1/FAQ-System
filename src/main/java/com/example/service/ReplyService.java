@@ -1,8 +1,6 @@
 package com.example.service;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +41,15 @@ public class ReplyService {
 		Information information = informationRepository.findOne(id);
 		information.getReply().add(reply);
 		informationRepository.save(information);
+	}
+	
+	/**
+	 * 根据id删除评论
+	 * @param id
+	 */
+	@Transactional
+	public void delete(Integer id){
+		replyRepository.delete(id);
 	}
 
 }
