@@ -42,8 +42,19 @@
 		<% if(request.isUserInRole("ROLE_ADMIN")){ %>
 		<div align="center">
 		  <a href="${pageContext.request.contextPath}/information/get/${information.id}">修改</a>
-		  <a href="${pageContext.request.contextPath}/information/delete/${information.id}" class="delete">删除</a></div>
+		  <a href="${pageContext.request.contextPath}/information/delete/${information.id}" class="delete">删除</a>
+		</div>
 		<% } %>
+		
+		<div align="center">
+		    <form action="${pageContext.request.contextPath}/reply/save" method="post">
+		     <input type="text" name="content"/>
+		     <input type="hidden" name="replyName" value="${pageContext.request.remoteUser}"/>
+		     <input type="hidden" name="id" value="${information.id }"/>
+		     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		     <input type="submit" value="评论">
+		    </form>
+		</div>
 		
 		<div align="center">
 		<c:forEach items="${information.reply }" var="reply">
