@@ -9,9 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".delete").click(function() {
+			var flag = confirm("确定要删除吗？");
+			if (flag) {
+				var url = $(this).attr("href");
+
+				$("#_form").attr("action",url);
+				$("#_method").val("GET");
+				$("#_form").submit();
+			}
+			return false;
+		});
+	});
+</script>
 </head>
 <body>
     <h1 align="center">欢迎来到主界面。</h1>
+    
+    <form action="" method="POST" id="_form">
+        <input type="hidden" id="_method" name="_method"/>
+    </form>
     
     <div align="center">
     <form action="${pageContext.request.contextPath}/PersonalInformation" method="POST" >
@@ -49,7 +69,7 @@
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
                     <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete">删除</a>
                     <%   }  %>
-                    <input type="hidden" value="${information.title}"/></td>
+                    </td>
 				</tr>
 			</c:forEach>
 

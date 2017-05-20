@@ -28,6 +28,16 @@ public class InformationBrowsingService {
 	public void save(Information information){
 		informationRepository.saveAndFlush(information);
 	}
+	
+	/**
+	 * 根据id删除问题
+	 * @param id
+	 */
+	@Transactional
+	public void delete(Integer id){
+		informationRepository.delete(id);
+	}
+	
 	/**
 	 * 分页
 	 * @param pageNo
