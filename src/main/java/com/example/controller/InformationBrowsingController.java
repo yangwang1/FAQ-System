@@ -25,6 +25,22 @@ public class InformationBrowsingController {
 	@Autowired
 	private InformationBrowsingService informationBrowsingService;
 	
+	@RequestMapping(value = "/create")
+	public String createInformation(){
+		return "newInformation";
+	}
+	
+	/**
+	 * 新建问题的保存
+	 * @param information
+	 * @return
+	 */
+	@RequestMapping(value = "/save")
+	public String save(Information information){
+		informationBrowsingService.save(information);
+		return "redirect:/information/main";
+	}
+	
 	/**
 	 * 分页,把后台取得的所有信息分页返回给前端页面
 	 * @param pageNoStr

@@ -22,9 +22,11 @@
        <input type="submit" value="个人信息"/>
     </form>
     </div>
+    
     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
-    <div align="center"><a href="${pageContext.request.contextPath}/information/newInformation">新建问题</a></div>
+    <div align="center"><a href="${pageContext.request.contextPath}/information/create">新建问题</a></div>
     <%   }  %>
+    
     <c:if test="${page == null || page.numberOfElements == 0}">
                   没有用户
     </c:if>

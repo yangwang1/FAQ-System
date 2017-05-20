@@ -21,6 +21,14 @@ public class InformationBrowsingService {
 	private InformationRepository informationRepository;
 	
 	/**
+	 * 把新建的问题保存到数据库
+	 * @param information
+	 */
+	@Transactional
+	public void save(Information information){
+		informationRepository.saveAndFlush(information);
+	}
+	/**
 	 * 分页
 	 * @param pageNo
 	 * @param pageSize
