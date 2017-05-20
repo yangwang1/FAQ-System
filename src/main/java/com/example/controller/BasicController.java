@@ -5,7 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BasicController {
-		
+	
+	@RequestMapping("/queryPage")
+	public String queryPage(){
+		return "queryPage";
+	}
+	
 	@RequestMapping("/VIP")
 	public String vip(){
 		return "VIP";

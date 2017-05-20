@@ -17,7 +17,7 @@
 	    <td align="center"><a href="back">后台管理界面</a></td>
 	</tr>
 	<tr>
-	    <td align="center"><a href="VIP">VIP界面</a></td>
+	    <td align="center"><a href="queryPage">查询界面</a></td>
 	</tr>
 	</table>
 	<div align="center">
