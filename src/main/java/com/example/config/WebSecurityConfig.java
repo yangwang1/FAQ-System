@@ -31,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http
+		    .headers().frameOptions().sameOrigin().httpStrictTransportSecurity().disable()
+		    .and()
 //		    .csrf().disable()
 			.authorizeRequests()			    
 			    .antMatchers("/information/main","/queryPage").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")

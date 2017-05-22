@@ -119,7 +119,7 @@ public class InformationBrowsingController {
 			}
 		}catch(Exception e){}
 		
-		Page<Information> page = informationBrowsingService.getPage(pageNo, 10);
+		Page<Information> page = informationBrowsingService.getPage(pageNo, 5);
 		map.put("page", page);
 		return "main";
 	}

@@ -6,29 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
+<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
-        <table border="0" cellpadding="4" cellspacing="0" align="center">
-			<tr>
+        <table class="table table-bordered table-striped table-hover">
+		    <caption>搜索结果</caption>
+			<thead><tr>
 			  <th>id</th>
               <th>问题</th>
               <th>查看内容</th>
               <% if(request.isUserInRole("ROLE_ADMIN")){ %>
               <th>删除</th>
               <%   }  %>
-			</tr>
-
+			</tr></thead>
+            <tbody>
 			<c:forEach items="${informations }" var="information">
 				<tr>
 					<td>${information.id}</td>
                     <td>${information.title}</td>
-                    <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}">查看内容</a></td>
+                    <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
-                    <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete">删除</a>
+                    <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>
                     <%   }  %>
                     </td>
 				</tr>
 			</c:forEach>
+            </tbody>
 
 		</table>
 </body>

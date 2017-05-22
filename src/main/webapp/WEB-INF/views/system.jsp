@@ -11,10 +11,11 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
+    
   <div class="container">
      <div class="row">
          <div class="col-md-12">
-         <img alt="" src="#" class="img-rounded">
+         <img alt="Cinque Terre" src="${pageContext.request.contextPath}/image/top.png" class="img-responsive">
          </div>
      </div>
      <div class="row">
@@ -35,10 +36,11 @@
      <div class="row">
          <div class="col-md-3" style="max-height: 500px">
              <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
-	            <li class="active"><a href="system">首页</a></li>
+	            <li class="active"><a href="#">首页</a></li>
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
 	            <li><a href="queryPage" target="newmain">答疑查询</a></li>
 	            <li><a href="back" target="newmain">后台管理</a></li>
+	            <li><a href="PersonalInformation" target="newmain" >用户中心</a></li>
              </ul>
          </div>
          <div class="col-md-9">

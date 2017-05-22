@@ -6,6 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BasicController {
 	
+	@RequestMapping("/system")
+	public String system(){
+		return "system";
+	}
+	
+	@RequestMapping("/newsuccess")
+	public String newsuccess(){
+		return "newsuccess";
+	}
+	
 	@RequestMapping("/queryPage")
 	public String queryPage(){
 		return "queryPage";

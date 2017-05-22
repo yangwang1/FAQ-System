@@ -9,7 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".delete").click(function() {
@@ -27,8 +29,7 @@
 </script>
 </head>
 <body>
-    <h1 align="center">欢迎来到主界面。</h1>
-    
+    <div class="container">
     <form action="" method="POST" id="_form">
         <input type="hidden" id="_method" name="_method"/>
     </form>
@@ -43,31 +44,36 @@
     </form>
     </div>
     
+   <div class="row">
+         <div class="col-md-12">
     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
-    <div align="center"><a href="${pageContext.request.contextPath}/information/create">新建问题</a></div>
+    <a href="${pageContext.request.contextPath}/information/create" class="btn btn-default btn-sm pull-right">新建问题</a>
     <%   }  %>
+    </div>
+    </div>
     
     <c:if test="${page == null || page.numberOfElements == 0}">
                   没有用户
     </c:if>
 	<c:if test="${page != null && page.numberOfElements > 0}">
-		<table border="0" cellpadding="4" cellspacing="0" align="center">
-			<tr>
+		<table class="table table-bordered table-striped table-hover">
+		 <caption>信息浏览</caption>
+			<thead><tr>
 			  <th>id</th>
               <th>问题</th>
               <th>查看内容</th>
               <% if(request.isUserInRole("ROLE_ADMIN")){ %>
               <th>删除</th>
               <%   }  %>
-			</tr>
-
+			</tr></thead>
+            <tbody>
 			<c:forEach items="${page.content}" var="information">
 				<tr>
 					<td>${information.id}</td>
                     <td>${information.title}</td>
-                    <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}">查看内容</a></td>
+                    <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
-                    <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete">删除</a>
+                    <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>
                     <%   }  %>
                     </td>
 				</tr>
@@ -82,7 +88,7 @@
 				<a href="?pageNo=${page.number + 1 + 1}">下一页</a>
 				</td>
 			</tr>
-
+          </tbody>
 		</table>
 	</c:if>
     
@@ -93,5 +99,5 @@
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
     </div>
+    </div>
 </body>
-<%-- <div> username : <sec:authentication property="authorities[0]"/></div> --%>

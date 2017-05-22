@@ -5,18 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
+<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/information/save" method="post">
-        <table width="300" height="200" border="0" align="center" >
+   <div class="container">
+   <div class="row">
+         <div class="col-md-12">
+    <form action="${pageContext.request.contextPath}/information/save" method="post" role="form">
+        <table width="400" height="200" border="0" align="center" >
       <caption align="top">新建问题</caption>
     <tr>
-       <td>问题:</td>
-       <td><input type="text" name="title" id="title"></td>
+       <td><label for="title">问题</label></td>
+       <td><input type="text" name="title" id="title" class="form-control"></td>
     </tr>
     <tr>
-       <td>内容:</td>
-       <td><input type="text" name="content" height="100" width="200"></td>
+       <td><label for="content">内容</label></td>
+       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="输入内容"></textarea></td>
     </tr>
     <tr>
        <td><input type="hidden" 
@@ -24,9 +30,12 @@
             value="${_csrf.token}"/></td><!-- CSRF（跨站请求伪造）参数  -->
     </tr>
     <tr>
-       <td colspan="2" align="center"><input type="submit" value="新建"></td>
+       <td colspan="2" align="center"><input type="submit" value="新建" class="btn btn-default btn-sm"></td>
     </tr>
     </table>
     </form>
+    </div>
+    </div>
+    </div>
 </body>
 </html>

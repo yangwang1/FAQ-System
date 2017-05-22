@@ -99,7 +99,7 @@ public class UserController {
 			}
 		}catch(Exception e){}
 		
-		Page<User> page = userService.getPage(pageNo, 10);
+		Page<User> page = userService.getPage(pageNo, 5);
 		map.put("page", page);
 		return "back";
 	}

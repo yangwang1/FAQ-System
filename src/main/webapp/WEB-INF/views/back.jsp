@@ -7,7 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".delete").click(function() {
@@ -34,9 +36,9 @@
                   没有用户
     </c:if>
 	<c:if test="${page != null && page.numberOfElements > 0}">
-		<table border="0" cellpadding="8" cellspacing="0" align="center">
-		<caption><b>用户</b></caption>
-			<tr>
+		<table class="table table-bordered table-striped table-hover">
+		<caption>用户表</caption>
+			<thead><tr>
 			  <th>用户id</th>
               <th>用户名</th>
               <th>密码</th>
@@ -45,8 +47,8 @@
               <th>权限类型</th>
               <th>修改</th>
               <th>删除</th>
-			</tr>
-
+			</tr></thead>
+             <tbody>
 			<c:forEach items="${page.content}" var="user">
 				<tr>
 					<td>${user.id}</td>
@@ -55,12 +57,12 @@
                     <td>${user.mailbox}</td>
                      <td>${user.enabled}</td>
                      <td>${user.userrole.rolename}</td>
-                     <td><a href = "${pageContext.request.contextPath}/update/${user.id}">修改</a></td>
-                     <td><a href = "${pageContext.request.contextPath}/delete/${user.id}" class="delete">删除</a>
+                     <td><a href = "${pageContext.request.contextPath}/update/${user.id}" class="btn btn-primary btn-sm" role="button">修改</a></td>
+                     <td><a href = "${pageContext.request.contextPath}/delete/${user.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>
                      <input type="hidden" value="${user.username}"/></td>
 				</tr>
 			</c:forEach>
-
+            
 			<tr>
 				<td colspan="8">
 				共${page.totalElements}条记录
@@ -70,7 +72,7 @@
 				<a href="?pageNo=${page.number + 1 + 1}">下一页</a>
 				</td>
 			</tr>
-
+          </tbody>
 		</table>
 	</c:if>
 </body>
