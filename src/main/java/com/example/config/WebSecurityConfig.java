@@ -35,9 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		    .and()
 //		    .csrf().disable()
 			.authorizeRequests()			    
-			    .antMatchers("/information/main","/queryPage").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			    .antMatchers("/information/main","/queryPage","/userCenter","/index.jsp").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 			    .mvcMatchers("/back").hasRole("ADMIN")
-			    .antMatchers("/VIP").hasRole("VIP")
 			    .anyRequest().permitAll()
 			.and()
 //			.requiresChannel()
@@ -49,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.logout()
 			    .deleteCookies("JSESSIONID")  //退出成功后删除cookies
 //			    .logoutUrl("")  //设置触发注销操作的URL(默认是logout)
-			    .logoutSuccessUrl("/index.jsp")  //注销成功后跳转的页面
+//			    .logoutSuccessUrl("/index.jsp")  //注销成功后跳转的页面
 			    .invalidateHttpSession(true)  //注销时使session无效
 			    .clearAuthentication(true) //注销时清除身份验证
 			.and()
@@ -59,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin()
 			    .loginPage("/login")  //自定义登录页
 			    .permitAll()
-			    .defaultSuccessUrl("/index.jsp")   //登录成功后默认跳转页面
+			    .defaultSuccessUrl("/information/main")   //登录成功后默认跳转页面
 			    .failureUrl("/failure")	  //登录失败后跳转的页面
 			.and()
 			.httpBasic()

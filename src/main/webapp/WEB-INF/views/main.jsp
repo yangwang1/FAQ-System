@@ -34,16 +34,6 @@
         <input type="hidden" id="_method" name="_method"/>
     </form>
     
-    <div align="center">
-    <form action="${pageContext.request.contextPath}/PersonalInformation" method="POST" >
-       <input type="hidden" name="username" value="${pageContext.request.remoteUser}"/>
-       <input type="hidden" 
-            name="${_csrf.parameterName}"
-            value="${_csrf.token}"/><!-- CSRF（跨站请求伪造）参数  -->
-       <input type="submit" value="个人信息"/>
-    </form>
-    </div>
-    
    <div class="row">
          <div class="col-md-12">
     <% if(request.isUserInRole("ROLE_ADMIN")){ %>

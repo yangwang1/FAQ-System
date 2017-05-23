@@ -23,8 +23,8 @@
             </p>
         </c:if>
         <c:if test="${param.logout != null}">    <!-- 如果请求参数logout存在则登出   -->
-            <p>
-                You have been logged out.
+            <p align="center">
+                您已经注销，请重新登陆。
             </p>
         </c:if>
         <table align="center" border="0" width="250" height="100">

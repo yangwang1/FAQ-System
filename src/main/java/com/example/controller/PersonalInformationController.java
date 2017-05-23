@@ -35,6 +35,14 @@ public class PersonalInformationController {
 		}
 	}
 	
+	@RequestMapping(value = "/userCenter", method = RequestMethod.GET)
+	public String getPersonInformation(@PathParam("username") String username, Map<String ,Object> map){
+		System.out.println(username);
+		User user = personInformation.getUserInformation(username);
+		map.put("user", user);
+		return "userCenter";
+	}
+	
 	/**
 	 * 通过用户名获取用户信息返还给前端进行回显
 	 * @param username
@@ -55,7 +63,9 @@ public class PersonalInformationController {
 	@RequestMapping(value = "update",method = RequestMethod.PUT)
 	public String update(User user){
 		personInformation.save(user);
-		return "redirect:/main";
+		return "redirect:/userCenter?username="+user.getUsername();
 	}
+	
+	
 
 }
