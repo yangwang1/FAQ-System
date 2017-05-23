@@ -9,6 +9,21 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".delete").click(function() {
+			var flag = confirm("确定要删除吗？");
+			if (flag) {
+				var url = $(this).attr("href");
+
+				$("#_form").attr("action",url);
+				$("#_method").val("GET");
+				$("#_form").submit();
+			}
+			return false;
+		});
+	});
+</script>
 </head>
 <body>
     <div class="container">
@@ -47,7 +62,6 @@
          <table class="table table-bordered table-striped table-hover">
 		    <caption>搜索结果</caption>
 			<thead><tr>
-			  <th>id</th>
               <th>问题</th>
               <th>查看内容</th>
               <% if(request.isUserInRole("ROLE_ADMIN")){ %>
@@ -57,7 +71,6 @@
             <tbody>
 			<c:forEach items="${informations }" var="information">
 				<tr>
-					<td>${information.id}</td>
                     <td>${information.title}</td>
                     <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>

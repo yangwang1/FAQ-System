@@ -49,7 +49,6 @@
 		<table class="table table-bordered table-striped table-hover">
 		 <caption>信息浏览</caption>
 			<thead><tr>
-			  <th>id</th>
               <th>问题</th>
               <th>查看内容</th>
               <% if(request.isUserInRole("ROLE_ADMIN")){ %>
@@ -59,7 +58,6 @@
             <tbody>
 			<c:forEach items="${page.content}" var="information">
 				<tr>
-					<td>${information.id}</td>
                     <td>${information.title}</td>
                     <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>

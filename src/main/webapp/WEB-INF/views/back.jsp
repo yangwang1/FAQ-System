@@ -39,7 +39,6 @@
 		<table class="table table-bordered table-striped table-hover">
 		<caption>用户表</caption>
 			<thead><tr>
-			  <th>用户id</th>
               <th>用户名</th>
               <th>密码</th>
               <th>邮箱</th>
@@ -51,7 +50,6 @@
              <tbody>
 			<c:forEach items="${page.content}" var="user">
 				<tr>
-					<td>${user.id}</td>
                     <td>${user.username}</td>
                     <td>${user.password}</td>
                     <td>${user.mailbox}</td>
