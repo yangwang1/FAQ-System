@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,15 +14,22 @@
     <div class="container">
      <div class="row">
          <div class="col-md-12">
-         <nav class="navbar navbar-default" role="navigation">
+         
+ <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid"> 
 	<div class="navbar-header">
 		<a class="navbar-brand" href="#">问题答疑</a>
 	</div>
 	<div>
-		<form class="navbar-form navbar-left" role="search" action="${pageContext.request.contextPath}/query/query" method="get">
+		<form class="navbar-form navbar-left" role="search" 
+		action="${pageContext.request.contextPath}/query/query" method="get">
 			<div class="form-group">
-				<input type="text" name="title" class="form-control" placeholder="Search">
+			<c:if test="${title == null}">
+				<input type="text" name="title" class="form-control" placeholder="请输入">
+			</c:if>
+			<c:if test="${title != null}">
+			    <input type="text" name="title" class="form-control" value="${title }">
+			</c:if>
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<button type="submit" class="btn btn-default">提交</button>
@@ -29,8 +37,40 @@
 	</div>
 	</div>
 </nav>
-         </div>
+</div>
+</div>
+      
+      <div class="row">
+         <div class="col-md-12">
+      
+         <c:if test="${informations!=null }">
+         <table class="table table-bordered table-striped table-hover">
+		    <caption>搜索结果</caption>
+			<thead><tr>
+			  <th>id</th>
+              <th>问题</th>
+              <th>查看内容</th>
+              <% if(request.isUserInRole("ROLE_ADMIN")){ %>
+              <th>删除</th>
+              <%   }  %>
+			</tr></thead>
+            <tbody>
+			<c:forEach items="${informations }" var="information">
+				<tr>
+					<td>${information.id}</td>
+                    <td>${information.title}</td>
+                    <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
+                    <% if(request.isUserInRole("ROLE_ADMIN")){ %>
+                    <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>
+                    <%   }  %>
+                    </td>
+				</tr>
+			</c:forEach>
+            </tbody>
+		</table>
+         </c:if>
       </div>
      </div>
+</div>
 </body>
 </html>

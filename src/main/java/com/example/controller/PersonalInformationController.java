@@ -35,9 +35,14 @@ public class PersonalInformationController {
 		}
 	}
 	
+	/**
+	 * 获取用户信息显示到用户中心模块
+	 * @param username
+	 * @param map
+	 * @return
+	 */
 	@RequestMapping(value = "/userCenter", method = RequestMethod.GET)
 	public String getPersonInformation(@PathParam("username") String username, Map<String ,Object> map){
-		System.out.println(username);
 		User user = personInformation.getUserInformation(username);
 		map.put("user", user);
 		return "userCenter";

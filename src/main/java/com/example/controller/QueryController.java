@@ -28,7 +28,8 @@ public class QueryController {
 			Map<String, Object> map){
 		List<Information> informations = queryService.getInformations(title);
 		map.put("informations", informations);
-		return "queryInformation";
+		map.put("title", title);
+		return "queryPage";
 	}
 
 }
