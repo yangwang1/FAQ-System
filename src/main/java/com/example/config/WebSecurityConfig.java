@@ -58,8 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin()
 			    .loginPage("/login")  //自定义登录页
 			    .permitAll()
-			    .defaultSuccessUrl("/information/main")   //登录成功后默认跳转页面
-			    .failureUrl("/failure")	  //登录失败后跳转的页面
+			    .defaultSuccessUrl("/index.jsp")   //登录成功后默认跳转页面
+//			    .failureUrl("/failure")	  //登录失败后跳转的页面
 			.and()
 			.httpBasic()
 		    .and()

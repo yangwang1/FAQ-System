@@ -29,7 +29,7 @@
 </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
     <form action="" method="POST" id="_form">
         <input type="hidden" id="_method" name="_method"/>
     </form>
@@ -42,6 +42,8 @@
     </div>
     </div>
     
+    <div class="row">
+    <div class="col-md-12">
     <c:if test="${page == null || page.numberOfElements == 0}">
                   没有用户
     </c:if>
@@ -79,13 +81,7 @@
           </tbody>
 		</table>
 	</c:if>
-    
-    <div align="center">
-    <c:url var="logoutUrl" value="/logout"/>
-    <form class="form-inline" action="${logoutUrl}" method="post">
-      <input type="submit" value="Log out" />
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </form>
-    </div>
+   </div>
+   </div>
     </div>
 </body>

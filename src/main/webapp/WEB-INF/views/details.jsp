@@ -26,7 +26,7 @@
 </script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
 
       <form action="" method="POST" id="_form">
         <input type="hidden" id="_method" name="_method"/>

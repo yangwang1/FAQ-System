@@ -11,9 +11,9 @@ public class BasicController {
 		return "system";
 	}
 	
-	@RequestMapping("/newsuccess")
-	public String newsuccess(){
-		return "newsuccess";
+	@RequestMapping("/success")
+	public String success(){
+		return "success";
 	}
 	
 	@RequestMapping("/queryPage")
@@ -21,19 +21,10 @@ public class BasicController {
 		return "queryPage";
 	}
 	
-	@RequestMapping("/VIP")
-	public String vip(){
-		return "VIP";
-	}
 	
 	@RequestMapping("/DenyAccess")
 	public String DenyAccess(){
 		return "DenyAccess";
-	}
-	
-	@RequestMapping("/helloworld")
-	public String hello(){
-		return "success";
 	}
 	
 	@RequestMapping("/session")

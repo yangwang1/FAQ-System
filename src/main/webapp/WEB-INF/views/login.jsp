@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript">
+if(top.location!=self.location)top.location=self.location;
+</script>
 </head>
 <body>
  <div class="container">
@@ -18,12 +21,12 @@
 <c:url value="/login" var="loginUrl"/>
     <form action="${loginUrl}" method="post" role="form">   <!-- 一个POST请求到/login用来验证用户 -->
         <c:if test="${param.error != null}">     <!-- 如果参数有错误，验证尝试失败  -->
-            <p>
-                Invalid username and password.
+            <p align="center" class="text-danger">
+               用户名或密码不正确,请重新登陆。
             </p>
         </c:if>
         <c:if test="${param.logout != null}">    <!-- 如果请求参数logout存在则登出   -->
-            <p align="center">
+            <p align="center" class="text-success">
                 您已经注销，请重新登陆。
             </p>
         </c:if>

@@ -6,22 +6,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>修改问题</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
+<script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row">
+         <div class="col-md-12">
      <form:form action="${pageContext.request.contextPath}/information/save/${information.id}" method="POST" modelAttribute="information">
          <form:hidden path="id"/>
          <input type="hidden" name="_method" value="PUT"/> 
+    
     
     <table width="300" height="200" border="0" align="center" >
       <caption align="top"></caption>
     <tr>
        <td>问题:</td>
-       <td><form:input path="title" id="username" disabled="true"/></td>
+       <td><form:input path="title" id="username" disabled="true" class="form-control"/></td>
     </tr>
     <tr>
        <td>答案:</td>
-       <td><form:input path="content"/></td>
+       <td><form:textarea path="content" class="form-control"/></td>
     </tr>
     <tr>
        <td><input type="hidden" 
@@ -33,5 +40,8 @@
     </tr>
     </table>
     </form:form>
+   </div>
+  </div>
+</div>
 </body>
 </html>

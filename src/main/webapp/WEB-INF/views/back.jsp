@@ -31,6 +31,9 @@
     <form action="" method="POST" id="_form">
         <input type="hidden" id="_method" name="_method"/>
     </form>
+<div class="container-fluid">
+<div class="row">
+         <div class="col-md-12">
 
     <c:if test="${page == null || page.numberOfElements == 0}">
                   没有用户
@@ -73,5 +76,8 @@
           </tbody>
 		</table>
 	</c:if>
+	</div>
+	</div>
+</div>
 </body>
 </html>

@@ -26,7 +26,7 @@
 </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
      <div class="row">
          <div class="col-md-12">
          
@@ -40,10 +40,10 @@
 		action="${pageContext.request.contextPath}/query/query" method="get">
 			<div class="form-group">
 			<c:if test="${empty title}">
-				<input type="text" name="title" class="form-control" placeholder="请输入">
+				<input type="text" name="title" class="form-control" placeholder="请输入" size="70px">
 			</c:if>
 			<c:if test="${not empty title}">
-			    <input type="text" name="title" class="form-control" value="${title }">
+			    <input type="text" name="title" class="form-control" value="${title }" size="70px">
 			</c:if>
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

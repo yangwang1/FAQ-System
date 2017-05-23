@@ -10,7 +10,7 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
-   <div class="container">
+   <div class="container-fluid">
    <div class="row">
          <div class="col-md-12">
     <form action="${pageContext.request.contextPath}/information/save" method="post" role="form">
@@ -18,11 +18,11 @@
       <caption align="top">新建问题</caption>
     <tr>
        <td><label for="title">问题</label></td>
-       <td><input type="text" name="title" id="title" class="form-control"></td>
+       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入问题"></td>
     </tr>
     <tr>
        <td><label for="content">内容</label></td>
-       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="输入内容"></textarea></td>
+       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入答案"></textarea></td>
     </tr>
     <tr>
        <td><input type="hidden" 
