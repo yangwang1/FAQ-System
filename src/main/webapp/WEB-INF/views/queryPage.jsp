@@ -24,15 +24,15 @@
 		<form class="navbar-form navbar-left" role="search" 
 		action="${pageContext.request.contextPath}/query/query" method="get">
 			<div class="form-group">
-			<c:if test="${title == null}">
+			<c:if test="${empty title}">
 				<input type="text" name="title" class="form-control" placeholder="请输入">
 			</c:if>
-			<c:if test="${title != null}">
+			<c:if test="${not empty title}">
 			    <input type="text" name="title" class="form-control" value="${title }">
 			</c:if>
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-			<button type="submit" class="btn btn-default">提交</button>
+			<button type="submit" class="btn btn-default">搜索</button>
 		</form>
 	</div>
 	</div>
@@ -43,7 +43,7 @@
       <div class="row">
          <div class="col-md-12">
       
-         <c:if test="${informations!=null }">
+         <c:if test="${not empty informations}">
          <table class="table table-bordered table-striped table-hover">
 		    <caption>搜索结果</caption>
 			<thead><tr>
