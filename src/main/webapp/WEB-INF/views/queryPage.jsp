@@ -24,6 +24,22 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+	$(function(){
+		$("#title").change(function(){
+			var val = $(this).val();
+			val = $.trim(val);
+			$(this).val(val);
+			
+			var url = "${pageContext.request.contextPath }/getTitle";
+			var args = {"title":val,"date":new Date()};
+			
+			$.post(url, args, function(data){
+				
+			});
+		});
+	})
+</script>
 </head>
 <body>
     <div class="container-fluid">
@@ -40,10 +56,10 @@
 		action="${pageContext.request.contextPath}/query/query" method="get">
 			<div class="form-group">
 			<c:if test="${empty title}">
-				<input type="text" name="title" class="form-control" placeholder="请输入" size="70px">
+				<input type="text" name="title" id="title" class="form-control" placeholder="请输入" size="70px">
 			</c:if>
 			<c:if test="${not empty title}">
-			    <input type="text" name="title" class="form-control" value="${title }" size="70px">
+			    <input type="text" name="title" id="title" class="form-control" value="${title }" size="70px">
 			</c:if>
 			</div>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

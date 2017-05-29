@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 		    .headers().frameOptions().sameOrigin().httpStrictTransportSecurity().disable()
 		    .and()
-//		    .csrf().disable()
+		    .csrf().disable()
 			.authorizeRequests()			    
 			    .antMatchers("/information/main","/queryPage","/userCenter","/index.jsp").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 			    .mvcMatchers("/back").hasRole("ADMIN")
