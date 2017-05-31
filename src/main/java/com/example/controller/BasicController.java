@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BasicController {
 	
+	
 	@RequestMapping("/system")
 	public String system(){
 		return "system";
