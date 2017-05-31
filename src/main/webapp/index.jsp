@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>系统界面</title>
+<title>答疑系统</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
@@ -27,7 +27,7 @@
   <div class="container-fluid">
      <div class="row">
          <div class="col-md-12">
-         <img alt="Cinque Terre" src="${pageContext.request.contextPath}/image/222.png" 
+         <img alt="Cinque Terre" src="${pageContext.request.contextPath}/image/logo2.png" 
          class="img-rounded" style="width: 100%;height: 70px;">
          </div>
      </div>
@@ -52,14 +52,16 @@
 	            <li class="active"><a href="#">首页</a></li>
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
 	            <li><a href="queryPage" target="newmain">答疑查询</a></li>
-	       
-	            <li><a href="back" target="newmain">后台管理</a></li>
-	      
+	            <li><a href="#" target="newmain">学生提问</a></li>
+	            <li><a href="#" target="newmain">教师答疑</a></li>
 	            <li><a href="#" onclick="document.getElementById('form1').submit();">用户中心</a></li>
+	            <li><a href="back" target="newmain">后台管理</a></li>
+	            <li><a href="#" target="newmain">公告发布</a></li>
+	            <li><a href="#" target="newmain">资源下载</a></li>
              </ul>
          </div>
          <div class="col-md-9">
-			    <iframe style="width: 99%; height: 400px; border: 0;" name="newmain">
+			    <iframe style="width: 99%; height: 400px; border: 0;" name="newmain" src="">
 				</iframe>
          </div>
      </div>

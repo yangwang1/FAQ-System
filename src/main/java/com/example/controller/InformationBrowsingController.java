@@ -50,8 +50,9 @@ public class InformationBrowsingController {
 	 * @return
 	 */
 	@RequestMapping(value = "/save" ,method = RequestMethod.POST)
-	public String save(Information information){
-		informationBrowsingService.save(information);
+	public String save(@RequestParam("title") String title, @RequestParam("content") String content,
+			@RequestParam("username") String username){
+		informationBrowsingService.save(title, content, username);
 		return "redirect:/information/main";
 	}
 	
@@ -96,7 +97,7 @@ public class InformationBrowsingController {
 	 */
 	@RequestMapping(value = "save/{id}", method = RequestMethod.PUT)
 	public String update(Information information){
-		informationBrowsingService.save(information);
+		informationBrowsingService.update(information);
 		return "redirect:/information/main";
 	}
 	

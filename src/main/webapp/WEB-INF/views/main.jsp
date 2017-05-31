@@ -45,7 +45,7 @@
     <div class="row">
     <div class="col-md-12">
     <c:if test="${page == null || page.numberOfElements == 0}">
-                  没有用户
+                  没有信息
     </c:if>
 	<c:if test="${page != null && page.numberOfElements > 0}">
 		<table class="table table-bordered table-striped table-hover">
@@ -60,7 +60,7 @@
             <tbody>
 			<c:forEach items="${page.content}" var="information">
 				<tr>
-                    <td>${information.title}</td>
+                    <td>${information.title.title}</td>
                     <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
                     <% if(request.isUserInRole("ROLE_ADMIN")){ %>
                     <td><a href = "${pageContext.request.contextPath}/information/delete/${information.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>

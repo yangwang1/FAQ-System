@@ -36,10 +36,10 @@
          <div class="col-md-12">
          <div class="panel panel-success">
          <div class="panel-heading">
-          <h3 class="panel-title">${information.title}</h3>
+          <h3 class="panel-title">${information.title.title}</h3>
           </div>
           <div class="panel-body" style="width: 99%; height: 200px;">
-          ${information.content}
+          ${information.content.content}
           </div>
           </div>
 		</div>

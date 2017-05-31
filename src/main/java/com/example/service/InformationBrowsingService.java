@@ -1,12 +1,16 @@
 package com.example.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.entities.Answer;
 import com.example.entities.Information;
+import com.example.entities.Problem;
 import com.example.repository.InformationRepository;
 
 /**
@@ -25,7 +29,22 @@ public class InformationBrowsingService {
 	 * @param information
 	 */
 	@Transactional
-	public void save(Information information){
+	public void save(String title, String content, String username){
+		//初始化问题类
+		Problem problem = new Problem();
+		problem.setTitle(title);
+		problem.setUsername(username);
+		problem.setTime(new Date());
+		//初始化答案类
+		Answer answer = new Answer();
+		answer.setContent(content);
+		answer.setUsername(username);
+		answer.setTime(new Date());
+		//初始化信息类
+		Information information = new Information();
+		information.setTitle(problem);
+		information.setContent(answer);
+
 		informationRepository.saveAndFlush(information);
 	}
 	
@@ -46,6 +65,18 @@ public class InformationBrowsingService {
 	@Transactional(readOnly = true)
 	public Information get(Integer id){
 		return informationRepository.findOne(id);
+	}
+	
+	/**
+	 * 问题的修改
+	 * @param id
+	 * @param title
+	 * @param content
+	 */
+	@Transactional
+	public void update(Information information){
+		informationRepository.saveAndFlush(information);
+		
 	}
 	
 	/**

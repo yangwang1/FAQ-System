@@ -28,6 +28,7 @@
        <td><input type="hidden" 
             name="${_csrf.parameterName}"
             value="${_csrf.token}"/></td><!-- CSRF（跨站请求伪造）参数  -->
+            <td><input type="hidden" name="username" value="${pageContext.request.remoteUser}"></td>
     </tr>
     <tr>
        <td colspan="2" align="center"><input type="submit" value="新建" class="btn btn-default btn-sm"></td>
