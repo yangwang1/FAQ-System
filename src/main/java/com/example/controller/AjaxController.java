@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.entities.Information;
+import com.example.entities.Problem;
 import com.example.service.AjaxService;
 
 /**
@@ -25,8 +25,8 @@ public class AjaxController {
 
 	@RequestMapping(value = "/getTitle", method = RequestMethod.POST)
 	public String getTitle(@RequestParam("title") String title, Map<String, Object> map){
-		List<Information> informations = ajaxService.getTitles(title);
-		map.put("informations", informations);
+		List<Problem> problems = ajaxService.getTitles(title);
+		map.put("problems", problems);
 		map.put("title", title);
 		return "queryPage";
 	}

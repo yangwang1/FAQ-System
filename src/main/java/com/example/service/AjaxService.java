@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.entities.Information;
-import com.example.repository.InformationRepository;
+import com.example.entities.Problem;
+import com.example.repository.ProblemRepository;
 
 @Service
 public class AjaxService {
 
 	@Autowired
-	private InformationRepository informationRepository;
+	private ProblemRepository problemRepository;
 	
 	/**
 	 * 查询包含关键字的所有问题
@@ -21,8 +21,8 @@ public class AjaxService {
 	 * @return
 	 */
 	@Transactional(readOnly = true)
-	public List<Information> getTitles(String title){
-		return informationRepository.findByTitleContaining(title);
+	public List<Problem> getTitles(String title){
+		return problemRepository.findByTitleContaining(title);
 	}
 
 }
