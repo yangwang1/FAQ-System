@@ -61,9 +61,9 @@
 	            <li><a href="back" target="newmain">后台管理</a></li>
 	            <%} %>
 	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
-	            <li><a href="announce/announce" target="newmain">公告管理</a></li>
+	            <li><a href="announce/getAll" target="newmain">公告管理</a></li>
 	            <%} %>
-	            <li><a href="#" target="newmain">资源下载</a></li>
+	            <li><a href="${pageContext.request.contextPath}/image/1303霍甜甜.docx" target="newmain">资源下载</a></li>
              </ul>
          </div>
          <div class="col-md-9">

@@ -96,9 +96,9 @@ public class InformationBrowsingController {
 	 * @return
 	 */
 	@RequestMapping(value = "save/{id}", method = RequestMethod.PUT)
-	public String update(Information information){
+	public String update(Information information, @PathVariable("id") Integer id){
 		informationBrowsingService.update(information);
-		return "redirect:/information/main";
+		return "redirect:/information/watch/" + id;
 	}
 	
 	/**
