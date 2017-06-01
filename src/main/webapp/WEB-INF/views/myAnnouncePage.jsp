@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>我的公告</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
@@ -34,48 +34,34 @@
         <input type="hidden" id="_method" name="_method"/>
     </form>
     
-   <div class="row">
-         <div class="col-md-12">
-    <% if(request.isUserInRole("ROLE_ADMIN")){ %>
-    <a href="${pageContext.request.contextPath}/announce/announce" class="btn btn-default btn-sm pull-right">发布公告</a>
-    <%   }  %>
-    </div>
-    </div>
-    
     <div class="row">
     <div class="col-md-12">
-    <c:if test="${accouncePage == null || accouncePage.numberOfElements == 0}">
-                 没有公告
+    <c:if test="${page == null || page.numberOfElements == 0}">
+                  没有发布过公告
     </c:if>
-	<c:if test="${accouncePage != null && accouncePage.numberOfElements > 0}">
+	<c:if test="${page != null && page.numberOfElements > 0}">
 		<table class="table table-bordered table-striped table-hover">
 		 <caption>公告列表</caption>
 			<thead><tr>
-              <th>公告标题</th>
+              <th>我发布过的公告</th>
               <th>查看内容</th>
-              <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
-              <th>删除</th>
-              <%   }  %>
+              <th>删除</th>           
 			</tr></thead>
             <tbody>
-			<c:forEach items="${accouncePage.content}" var="announce">
+			<c:forEach items="${page.content}" var="announce">
 				<tr>
                     <td>${announce.title}</td>
                     <td><a href = "${pageContext.request.contextPath}/announce/get/${announce.id}" class="btn btn-info btn-sm" role="button">查看内容</a></td>
-                    <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
                     <td><a href = "${pageContext.request.contextPath}/announce/delete/${announce.id}" class="delete btn btn-danger btn-sm" role="button">删除</a>
-                    <%   }  %>
                     </td>
 				</tr>
 			</c:forEach>
 
 			<tr>
-				<td colspan="1">
-				共${accouncePage.totalElements}条记录
-				 共${accouncePage.totalPages}页
-				当前${accouncePage.number + 1}页
-				<a href="?accouncePageNo=${accouncePage.number + 1 - 1}">上一页</a>
-				<a href="?accouncePageNo=${accouncePage.number + 1 + 1}">下一页</a>
+				<td colspan="2">
+				第${page.number + 1}页
+				<a href="?pageNo=${page.number + 1 - 1}&&username=${pageContext.request.remoteUser}">上一页</a>
+				<a href="?pageNo=${page.number + 1 + 1}&&username=${pageContext.request.remoteUser}">下一页</a>
 				</td>
 			</tr>
           </tbody>

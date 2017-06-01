@@ -36,7 +36,7 @@
               <nav class="navbar navbar-default" role="navigation">
               <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="#">答疑系统</a>
+                <a class="navbar-brand" href="#">Java答疑系统</a>
               </div>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> ${pageContext.request.remoteUser}</a></li>
@@ -56,14 +56,14 @@
 	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
 	            <li><a href="answer/answer" target="newmain">教师答疑</a></li>
 	            <%} %>
-	            <li><a href="#" onclick="document.getElementById('form1').submit();">用户中心</a></li>
+	            <li><a href="personalManagement" target="newmain">个人中心</a></li>
 	            <% if(request.isUserInRole("ROLE_ADMIN")){ %>
 	            <li><a href="back" target="newmain">后台管理</a></li>
 	            <%} %>
 	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
 	            <li><a href="announce/getAll" target="newmain">公告管理</a></li>
 	            <%} %>
-	            <li><a href="${pageContext.request.contextPath}/image/1303霍甜甜.docx" target="newmain">资源下载</a></li>
+	            <li><a href="resources" target="newmain">资源下载</a></li>
              </ul>
          </div>
          <div class="col-md-9">

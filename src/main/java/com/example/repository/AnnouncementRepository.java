@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.example.entities.Announcement;
 /**
@@ -8,6 +9,7 @@ import com.example.entities.Announcement;
  * @author wangwang
  *
  */
-public interface AnnouncementRepository extends JpaRepository<Announcement, Integer>{
+public interface AnnouncementRepository extends JpaRepository<Announcement, Integer>, 
+JpaSpecificationExecutor<Announcement>{
 
 }
