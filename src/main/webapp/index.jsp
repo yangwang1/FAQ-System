@@ -53,7 +53,7 @@
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
 	            <li><a href="queryPage" target="newmain">答疑查询</a></li>
 	            <li><a href="ask/ask" target="newmain">学生提问</a></li>
-	            <li><a href="#" target="newmain">教师答疑</a></li>
+	            <li><a href="answer/answer" target="newmain">教师答疑</a></li>
 	            <li><a href="#" onclick="document.getElementById('form1').submit();">用户中心</a></li>
 	            <li><a href="back" target="newmain">后台管理</a></li>
 	            <li><a href="#" target="newmain">公告发布</a></li>

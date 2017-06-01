@@ -14,7 +14,8 @@
      <div class="row">
         
          <div class="col-md-12" align="center" style="height: 400px; width: 800px;">
-            <h1 class="text-success">提问成功，请等待老师回答</h1>
+            <h1 class="text-success">回答成功，返回继续答疑</h1>
+            <a href="${pageContext.request.contextPath}/answer/answer" class="btn btn-default btn-sm">返回</a>
         </div>
    
    </div>
