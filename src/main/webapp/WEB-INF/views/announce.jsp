@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>新建问题</title>
+<title>发布公告</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">  
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.9.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
@@ -13,16 +13,16 @@
    <div class="container-fluid">
    <div class="row">
          <div class="col-md-12">
-    <form action="${pageContext.request.contextPath}/information/save" method="post" role="form">
+    <form action="${pageContext.request.contextPath}/announce/release" method="post" role="form">
         <table width="400" height="200" border="0" align="center" >
-      <caption align="top">新建问题</caption>
+      <caption align="top">新建公告</caption>
     <tr>
-       <td><label for="title">问题</label></td>
-       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入问题"></td>
+       <td><label for="title">公告标题</label></td>
+       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入标题"></td>
     </tr>
     <tr>
-       <td><label for="content">内容</label></td>
-       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入答案"></textarea></td>
+       <td><label for="content">公告内容</label></td>
+       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入内容"></textarea></td>
     </tr>
     <tr>
        <td><input type="hidden" 
@@ -31,7 +31,7 @@
             <td><input type="hidden" name="username" value="${pageContext.request.remoteUser}"></td>
     </tr>
     <tr>
-       <td colspan="2" align="center"><input type="submit" value="新建" class="btn btn-default btn-sm"></td>
+       <td colspan="2" align="center"><input type="submit" value="发布" class="btn btn-default btn-sm"></td>
     </tr>
     </table>
     </form>

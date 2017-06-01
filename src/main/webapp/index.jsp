@@ -56,7 +56,7 @@
 	            <li><a href="answer/answer" target="newmain">教师答疑</a></li>
 	            <li><a href="#" onclick="document.getElementById('form1').submit();">用户中心</a></li>
 	            <li><a href="back" target="newmain">后台管理</a></li>
-	            <li><a href="#" target="newmain">公告发布</a></li>
+	            <li><a href="announce/announce" target="newmain">公告发布</a></li>
 	            <li><a href="#" target="newmain">资源下载</a></li>
              </ul>
          </div>
