@@ -29,4 +29,14 @@ public class AnnouncementService {
 		announcement.setCreatTime(new Date());
 		announcementRepository.saveAndFlush(announcement);
 	}
+	
+	/**
+	 * 根据id查询公告内容
+	 * @param id
+	 * @return
+	 */
+	@Transactional(readOnly = true)
+	public Announcement getAnnouncement(Integer id){
+		return announcementRepository.findOne(id);
+	}
 }

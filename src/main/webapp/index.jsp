@@ -49,19 +49,25 @@
      <div class="row">
          <div class="col-md-3" style="max-height: 500px">
              <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
-	            <li class="active"><a href="#">首页</a></li>
+	            <li class="active"><a href="Home/home" target="newmain">首页</a></li>
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
 	            <li><a href="queryPage" target="newmain">答疑查询</a></li>
 	            <li><a href="ask/ask" target="newmain">学生提问</a></li>
+	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
 	            <li><a href="answer/answer" target="newmain">教师答疑</a></li>
+	            <%} %>
 	            <li><a href="#" onclick="document.getElementById('form1').submit();">用户中心</a></li>
+	            <% if(request.isUserInRole("ROLE_ADMIN")){ %>
 	            <li><a href="back" target="newmain">后台管理</a></li>
-	            <li><a href="announce/announce" target="newmain">公告发布</a></li>
+	            <%} %>
+	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
+	            <li><a href="announce/announce" target="newmain">公告管理</a></li>
+	            <%} %>
 	            <li><a href="#" target="newmain">资源下载</a></li>
              </ul>
          </div>
          <div class="col-md-9">
-			    <iframe style="width: 99%; height: 400px; border: 0;" name="newmain" src="">
+			    <iframe style="width: 99%; height: 400px; border: 0;" name="newmain" src="Home/home">
 				</iframe>
          </div>
      </div>

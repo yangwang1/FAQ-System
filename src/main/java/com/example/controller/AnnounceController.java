@@ -1,7 +1,10 @@
 package com.example.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -34,4 +37,18 @@ public class AnnounceController {
 		announcementService.save(announcement);
 		return "announceSuccessPage";
 	}
+	
+	/**
+	 * 根据id获取公告内容进行回显
+	 * @param id
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping(value = "/watch/{id}")
+	public String getAnnouncement(@PathVariable("id") Integer id, Map<String, Object> map){
+		Announcement announcement = announcementService.getAnnouncement(id);
+		map.put("announcement", announcement);
+		return "announcement";
+	}
+	
 }
