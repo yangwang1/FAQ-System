@@ -76,6 +76,13 @@
       
       <div class="row">
          <div class="col-md-12">
+         <c:if test="${empty informations}">
+         <strong>常见问题：</strong><br>
+         <p class="text-primary">Java的三大特性是什么？</p>
+         <p class="text-primary">Java容易学吗？</p>
+         <p class="text-primary">为什么我照着书上写的代码会报错？</p>
+         <p class="text-primary">java和c++哪个用的多？</p>
+         </c:if>
       
          <c:if test="${not empty informations}">
          <table class="table table-bordered table-striped table-hover">

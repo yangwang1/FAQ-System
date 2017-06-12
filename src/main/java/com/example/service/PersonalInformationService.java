@@ -85,8 +85,8 @@ public class PersonalInformationService {
 			@Override
 			public Predicate toPredicate(Root<Information> arg0, CriteriaQuery<?> arg1, CriteriaBuilder arg2) {
 				
-				Path path = arg0.get("content").get("username");  //导航到查询条件需要的属性
-				Predicate predicate = arg2.equal(path, username);  //这个属性为空
+				Path path = arg0.get("content").get("username");    //导航到查询条件需要的属性
+				Predicate predicate = arg2.equal(path, username);  //这个属性相等
 				return predicate;
 			}};
 

@@ -125,7 +125,7 @@ public class PersonalInformationController {
 			}
 		}catch(Exception e){}
 		
-		Page<Information> page = personInformation.getMyAskPage(pageNo, 5, username);
+		Page<Information> page = personInformation.getMyAnswerPage(pageNo, 5, username);
 		map.put("page", page);
 		return "myAnswerPage";
 	}

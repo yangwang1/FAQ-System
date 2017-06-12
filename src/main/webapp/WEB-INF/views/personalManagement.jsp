@@ -20,11 +20,15 @@
     </div>
     <div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="${pageContext.request.contextPath}/userCenter?username=${pageContext.request.remoteUser}" 
-            target="newmain">个人信息</a></li>
-            <li><a href="${pageContext.request.contextPath}/myAsk?username=${pageContext.request.remoteUser}" target="newmain">我的提问</a></li>
-            <li><a href="${pageContext.request.contextPath}/myAnswer?username=${pageContext.request.remoteUser}" target="newmain">我的答疑</a></li>
-            <li><a href="${pageContext.request.contextPath}/myAnnounce?username=${pageContext.request.remoteUser}" target="newmain">发布过的公告</a></li>
+            <li><a href="${pageContext.request.contextPath}/userCenter?username=${pageContext.request.remoteUser}" 
+            target="person">个人信息</a></li>
+            <% if(request.isUserInRole("ROLE_USER")){ %>
+            <li><a href="${pageContext.request.contextPath}/myAsk?username=${pageContext.request.remoteUser}" target="person">我的提问</a></li>
+            <%} %>
+            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
+            <li><a href="${pageContext.request.contextPath}/myAnswer?username=${pageContext.request.remoteUser}" target="person">我的答疑</a></li>
+            <li><a href="${pageContext.request.contextPath}/myAnnounce?username=${pageContext.request.remoteUser}" target="person">发布过的公告</a></li>
+            <%} %>
         </ul>
     </div>
     </div>
@@ -35,7 +39,7 @@
 
    <div class="row">
          <div class="col-sm-12">
-         <iframe style="width: 99%; height: 400px; border: 0;" name="newmain" src="${pageContext.request.contextPath}/userCenter?username=${pageContext.request.remoteUser}">
+         <iframe style="width: 99%; height: 400px; border: 0;" name="person" src="${pageContext.request.contextPath}/userCenter?username=${pageContext.request.remoteUser}">
 	     </iframe>
     </div>
 </div>

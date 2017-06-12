@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		    .and()
 		    .csrf().disable()
 			.authorizeRequests()			    
-			    .antMatchers("/information/main","/queryPage","/userCenter","/index.jsp").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			    .antMatchers("/information/main","/queryPage","/userCenter","/index.jsp").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_TEACHER')")
 			    .mvcMatchers("/back").hasRole("ADMIN")
 			    .anyRequest().permitAll()
 			.and()

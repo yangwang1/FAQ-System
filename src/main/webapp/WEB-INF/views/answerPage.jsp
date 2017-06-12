@@ -62,9 +62,7 @@
 
 			<tr>
 				<td colspan="4">
-				共${page.totalElements}条记录
-				 共${page.totalPages}页
-				当前${page.number + 1}页
+				第${page.number + 1}页
 				<a href="?pageNo=${page.number + 1 - 1}">上一页</a>
 				<a href="?pageNo=${page.number + 1 + 1}">下一页</a>
 				</td>

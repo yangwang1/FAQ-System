@@ -47,12 +47,14 @@
           </div>
      </div>
      <div class="row">
-         <div class="col-md-3" style="max-height: 500px">
+         <div class="col-md-3" style="max-height: 700px">
              <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
 	            <li class="active"><a href="Home/home" target="newmain">首页</a></li>
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
-	            <li><a href="queryPage" target="newmain">答疑查询</a></li>
+	            <li><a href="queryPage" target="newmain">问题搜索</a></li>
+	            <% if(request.isUserInRole("ROLE_USER")){ %>
 	            <li><a href="ask/ask" target="newmain">学生提问</a></li>
+	            <%} %>
 	            <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
 	            <li><a href="answer/answer" target="newmain">教师答疑</a></li>
 	            <%} %>
@@ -67,7 +69,7 @@
              </ul>
          </div>
          <div class="col-md-9">
-			    <iframe style="width: 99%; height: 400px; border: 0;" name="newmain" src="Home/home">
+			    <iframe style="width: 99%; height: 450px; border: 0;" name="newmain" src="Home/home">
 				</iframe>
          </div>
      </div>

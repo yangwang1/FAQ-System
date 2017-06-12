@@ -29,6 +29,7 @@
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/answer/answerQuestion/${information.id}">
                     ${information.title.title}</a></td>
+                    <td>${information.title.time}</td>
 				</tr>
 			</c:forEach>
 
@@ -57,6 +58,7 @@
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}">
                     ${information.title.title}</a></td>
+                    <td>${information.title.time}</td>
 				</tr>
 			</c:forEach>
 
@@ -84,6 +86,7 @@
 			<c:forEach items="${accouncePage.content}" var="accounce">
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/announce/watch/${accounce.id}">${accounce.title}</a></td>
+				    <td>${accounce.creatTime}</td>
 				</tr>
 			</c:forEach>
 

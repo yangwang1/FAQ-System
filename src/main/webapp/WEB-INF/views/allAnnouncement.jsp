@@ -36,7 +36,7 @@
     
    <div class="row">
          <div class="col-md-12">
-    <% if(request.isUserInRole("ROLE_ADMIN")){ %>
+    <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
     <a href="${pageContext.request.contextPath}/announce/announce" class="btn btn-default btn-sm pull-right">发布公告</a>
     <%   }  %>
     </div>
@@ -70,10 +70,8 @@
 			</c:forEach>
 
 			<tr>
-				<td colspan="1">
-				共${accouncePage.totalElements}条记录
-				 共${accouncePage.totalPages}页
-				当前${accouncePage.number + 1}页
+				<td colspan="3">
+				第${accouncePage.number + 1}页
 				<a href="?accouncePageNo=${accouncePage.number + 1 - 1}">上一页</a>
 				<a href="?accouncePageNo=${accouncePage.number + 1 + 1}">下一页</a>
 				</td>
