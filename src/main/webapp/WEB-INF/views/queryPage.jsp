@@ -82,6 +82,12 @@
          <p class="text-primary">Java容易学吗？</p>
          <p class="text-primary">为什么我照着书上写的代码会报错？</p>
          <p class="text-primary">java和c++哪个用的多？</p>
+         <p class="text-primary">什么是FAQ？</p>
+         <p class="text-primary">Scanf常见错误</p>
+         <p class="text-primary">在编译器提示出错的语句中，我找不着错误，该怎么办？</p>
+         <p class="text-primary">我在Web页面上可以运行一个有用的程序，我能脱离浏览器独立运行它吗？</p>
+         <p class="text-primary">我的计算机在网页中运行java程序，是否会带来病毒？</p>
+         <p class="text-primary">所有传递给应用程序的参数都必须是字符串吗？</p>
          </c:if>
       
          <c:if test="${not empty informations}">
