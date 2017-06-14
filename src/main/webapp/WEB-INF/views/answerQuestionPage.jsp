@@ -20,15 +20,15 @@
 <!--          <input type="hidden" name="_method" value="PUT"/>  -->
     
     
-    <table width="300" height="200" border="0" align="center" >
+    <table width="600" height="300" border="0" align="center" >
       <caption align="top"></caption>
     <tr>
        <td>问题:</td>
-       <td><form:input path="title.title" id="title" disabled="true" class="form-control"/></td>
+       <td><form:input path="title.title" id="title" disabled="true" class="form-control" style="height: 60px; width: 400px;"/></td>
     </tr>
     <tr>
        <td>答案:</td>
-       <td><form:textarea path="content.content" class="form-control"/></td>
+       <td><form:textarea path="content.content" class="form-control" style="height: 150px; width: 400px;"/></td>
     </tr>
     <tr>
        <td><input type="hidden" 

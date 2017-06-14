@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +30,9 @@
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/answer/answerQuestion/${information.id}">
                     ${information.title.title}</a></td>
-                    <td>${information.title.time}</td>
+                    <td>
+                    <fmt:formatDate value="${information.title.time}" pattern="yyyy-MM-dd hh:mm"/>
+                    </td>
 				</tr>
 			</c:forEach>
 
@@ -58,7 +61,9 @@
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/information/watch/${information.id}">
                     ${information.title.title}</a></td>
-                    <td>${information.title.time}</td>
+                    <td>
+                    <fmt:formatDate value="${information.title.time}" pattern="yyyy-MM-dd hh:mm"/>
+                    </td>
 				</tr>
 			</c:forEach>
 
@@ -86,7 +91,9 @@
 			<c:forEach items="${accouncePage.content}" var="accounce">
 				<tr>
                     <td><a href = "${pageContext.request.contextPath}/announce/watch/${accounce.id}">${accounce.title}</a></td>
-				    <td>${accounce.creatTime}</td>
+				    <td>
+                    <fmt:formatDate value="${accounce.creatTime}" pattern="yyyy-MM-dd hh:mm"/>
+                    </td>
 				</tr>
 			</c:forEach>
 
