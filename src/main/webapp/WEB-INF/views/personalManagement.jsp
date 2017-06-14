@@ -12,7 +12,7 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-         <div class="col-sm-12">
+         <div class="col-md-12 col-sm-12 col-xs-12">
          <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
@@ -38,7 +38,7 @@
 </div>
 
    <div class="row">
-         <div class="col-sm-12">
+         <div class="col-md-12 col-sm-12 col-xs-12">
          <iframe style="width: 99%; height: 400px; border: 0;" name="person" src="${pageContext.request.contextPath}/userCenter?username=${pageContext.request.remoteUser}">
 	     </iframe>
     </div>

@@ -14,15 +14,15 @@
    <div class="row">
          <div class="col-md-12">
     <form action="${pageContext.request.contextPath}/information/save" method="post" role="form">
-        <table width="400" height="200" border="0" align="center" >
+        <table width="600" height="300" border="0" align="center" >
       <caption align="top">新建问题</caption>
     <tr>
        <td><label for="title">问题</label></td>
-       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入问题"></td>
+       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入问题" style="height: 60px; width: 400px;"></td>
     </tr>
     <tr>
        <td><label for="content">内容</label></td>
-       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入答案"></textarea></td>
+       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入答案" style="height: 150px; width: 400px;"></textarea></td>
     </tr>
     <tr>
        <td><input type="hidden" 

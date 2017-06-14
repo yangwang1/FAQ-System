@@ -14,15 +14,15 @@
    <div class="row">
          <div class="col-md-12">
     <form action="${pageContext.request.contextPath}/announce/release" method="post" role="form">
-        <table width="400" height="200" border="0" align="center" >
+        <table width="600" height="300" border="0" align="center" >
       <caption align="top">新建公告</caption>
     <tr>
        <td><label for="title">公告标题</label></td>
-       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入标题"></td>
+       <td><input type="text" name="title" id="title" class="form-control" placeholder="请输入标题" style="height: 60px; width: 400px;"></td>
     </tr>
     <tr>
        <td><label for="content">公告内容</label></td>
-       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入内容"></textarea></td>
+       <td><textarea name = "content" id="content" class="form-control" rows="3" placeholder="请输入内容" placeholder="请输入答案" style="height: 150px; width: 400px;"></textarea></td>
     </tr>
     <tr>
        <td><input type="hidden" 

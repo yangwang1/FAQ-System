@@ -26,13 +26,13 @@
        </form>
   <div class="container-fluid">
      <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 col-sm-12 col-xs-12">
          <img alt="Cinque Terre" src="${pageContext.request.contextPath}/image/logo2.png" 
          class="img-rounded" style="width: 100%;height: 70px;">
          </div>
      </div>
      <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 col-sm-12 col-xs-12">
               <nav class="navbar navbar-default" role="navigation">
               <div class="container-fluid">
               <div class="navbar-header">
@@ -47,7 +47,7 @@
           </div>
      </div>
      <div class="row">
-         <div class="col-md-3" style="max-height: 700px">
+         <div class="col-md-3 col-sm-3 col-xs-3" style="max-height: 700px">
              <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
 	            <li class="active"><a href="Home/home" target="newmain">首页</a></li>
 	            <li><a href="information/main" target="newmain">信息浏览</a></li>
@@ -68,7 +68,7 @@
 	            <li><a href="resources" target="newmain">资源下载</a></li>
              </ul>
          </div>
-         <div class="col-md-9">
+         <div class="col-md-9 col-sm-9 col-xs-9">
 			    <iframe style="width: 99%; height: 450px; border: 0;" name="newmain" src="Home/home">
 				</iframe>
          </div>

@@ -17,7 +17,7 @@
 <div class="row">
 
 <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
-         <div class="col-sm-6">
+         <div class="col-md-6 col-sm-6 col-xs-6">
              <c:if test="${titlePage == null || titlePage.numberOfElements == 0}">
                   没有学生提问
     </c:if>
@@ -46,7 +46,7 @@
          </div>
  <%} %>        
  <% if(request.isUserInRole("ROLE_USER")){ %>
-              <div class="col-sm-6">
+              <div class="col-md-6 col-sm-6 col-xs-6">
              <c:if test="${contentPage == null || contentPage.numberOfElements == 0}">
                   没有答疑
     </c:if>
@@ -75,7 +75,7 @@
          </div>    
  <%} %>        
          
-         <div class="col-sm-6">
+         <div class="col-md-6 col-sm-6 col-xs-6">
              <c:if test="${accouncePage == null || accouncePage.numberOfElements == 0}">
                   没有公告
     </c:if>

@@ -14,7 +14,7 @@
 <div class="row">
 
       <div class="col-md-12" style="width: 90%; height: 40;">
-      <form role="form" action="${pageContext.request.contextPath}/ask/question" method="post" >
+      <form role="form" action="${pageContext.request.contextPath}/ask/question" method="get" >
          <div class="form-group">
            <label for="name" class="text-info">提问</label>
             <textarea class="form-control" name="title" rows="3" placeholder="请输入问题"></textarea>
