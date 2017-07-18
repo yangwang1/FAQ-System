@@ -27,7 +27,7 @@
             <%} %>
             <% if(request.isUserInRole("ROLE_ADMIN")||request.isUserInRole("ROLE_TEACHER")){ %>
             <li><a href="${pageContext.request.contextPath}/myAnswer?username=${pageContext.request.remoteUser}" target="person">我的答疑</a></li>
-            <li><a href="${pageContext.request.contextPath}/myAnnounce?username=${pageContext.request.remoteUser}" target="person">发布过的公告</a></li>
+            <li><a href="${pageContext.request.contextPath}/myAnnounce?username=${pageContext.request.remoteUser}" target="person">我的公告</a></li>
             <%} %>
         </ul>
     </div>

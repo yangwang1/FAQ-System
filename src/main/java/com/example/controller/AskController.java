@@ -42,9 +42,6 @@ public class AskController {
 	public String getInformations(@RequestParam(value="pageNo", required=false, defaultValue="1") String pageNoStr,
 			Map<String, Object> map, @RequestParam(value = "title") String title, 
 			@RequestParam(value = "username", required=false) String username){
-		if(username != null){
-		askService.save(title, username);
-		}
         int pageNo = 1;
 		
 		try{
@@ -56,6 +53,10 @@ public class AskController {
 		}catch(Exception e){}
 		
 		Page<Information> page = askService.getInformations(pageNo, 5, title);
+		
+		if(username != null){
+			askService.save(title, username);
+		}
 		map.put("page", page);
 		map.put("title", title);
 		return "askSuccessPage";
